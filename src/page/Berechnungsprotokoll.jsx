@@ -1,13 +1,12 @@
 import {
   Accordion,
-  AccordionSummary,
   AccordionDetails,
+  AccordionSummary,
   Typography,
 } from "@mui/material";
-
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-function AllgemeineHinweise() {
+function Berechnungsprotokoll() {
   return (
     <Accordion>
       <AccordionSummary
@@ -15,7 +14,7 @@ function AllgemeineHinweise() {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography>Allgemeine Hinweise</Typography>
+        <Typography>Berechnungsprotokoll</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
@@ -26,5 +25,4 @@ function AllgemeineHinweise() {
     </Accordion>
   );
 }
-
-export default AllgemeineHinweise;
+export default Berechnungsprotokoll;

@@ -1,21 +1,14 @@
-import {
-  CssBaseline,
-  Box,
-  Typography,
-  Container,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import AllgemeineHinweise from "./AllgemeineHinweise";
+import { CssBaseline, Box, Typography, Container } from "@mui/material";
 import Formeln from "./Formeln";
+import Berechnung from "./Berechnung";
+import Berechnungsprotokoll from "./Berechnungsprotokoll";
+import Berechnungsansatz from "./Berechnungsansatz";
 
 function MitteLängsdruckKraft() {
   return (
     <>
       <CssBaseline />
-      <Container>
+      <Container maxWidth="lg">
         {" "}
         <Box
           sx={{
@@ -29,8 +22,10 @@ function MitteLängsdruckKraft() {
           <Typography component="h1" variant="h5">
             Mittige Längsdruckkraft
           </Typography>
-          <AllgemeineHinweise />
+          <Berechnungsansatz />
           <Formeln />
+          <Berechnung />
+          <Berechnungsprotokoll />
         </Box>
       </Container>
     </>

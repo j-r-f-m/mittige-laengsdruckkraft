@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 function Berechnungsansatz() {
   const ImageComp = styled.img`
-    max-width: 100%;
+    max-width: 40%;
     height: auto;
   `;
 

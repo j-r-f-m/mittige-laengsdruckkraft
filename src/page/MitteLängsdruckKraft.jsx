@@ -21,11 +21,14 @@ function MitteLängsdruckKraft() {
           {" "}
           <Typography component="h1" variant="h5">
             Mittige Längsdruckkraft
-          </Typography>
-          <Berechnungsansatz />
-          <Formeln />
-          <Berechnung />
-          <Berechnungsprotokoll />
+          </Typography>{" "}
+          <div>
+            {" "}
+            <Berechnungsansatz />
+            <Formeln />
+            <Berechnung />
+            <Berechnungsprotokoll />
+          </div>
         </Box>
       </Container>
     </>

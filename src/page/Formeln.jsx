@@ -19,11 +19,18 @@ function Formeln() {
       </AccordionSummary>
       <AccordionDetails>
         <MathJax>
+          <Typography
+            variant="h5"
+            component="h5"
+            sx={{ paddingBottom: "0.25rem" }}
+          >
+            Resultierende Spaltzugkraft
+          </Typography>
+
           <div>
             {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}}) \\)"}
           </div>
           <div>
-            {/*        {"\\(F{s}\\)"} &nbsp;&nbsp;&nbsp;&nbsp; resultierende Spaltzugkraft */}
             <span style={{ display: "inline-block", width: "3rem" }}>
               {"\\(F{s}\\)"}
             </span>
@@ -38,10 +45,30 @@ function Formeln() {
               wirkende Druckkraft
             </span>
           </div>
+          <div>
+            <span style={{ display: "inline-block", width: "3rem" }}>
+              {"\\(h{1}\\)"}
+            </span>
+            <span>Seitenlänge der Teilfläche</span>
+          </div>
+          <div>
+            <span style={{ display: "inline-block", width: "3rem" }}>
+              {"\\(h{1}\\)"}
+            </span>
+            <span>Seitenlänge der Verteilungsfläche</span>
+          </div>
+          <br />
+          <Typography
+            variant="h5"
+            component="h5"
+            sx={{ paddingBottom: "0.25rem" }}
+          >
+            Erforderliche Bewehrung
+          </Typography>
+          <div>{"\\(A{s} = \\frac{F{s}}{\\sigma{s}}  \\)"}</div>
         </MathJax>
       </AccordionDetails>
     </Accordion>
-    // test accordion
   );
 }
 

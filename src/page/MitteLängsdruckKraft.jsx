@@ -4,7 +4,8 @@ import Formeln from "./Formeln";
 import Berechnung from "./Berechnung";
 import Berechnungsprotokoll from "./Berechnungsprotokoll";
 import Berechnungsansatz from "./Berechnungsansatz";
-import FormWithoutHookForm from "./FormWithoutHookForm";
+
+import { MuiLoginForm } from "../components/form-components/MuiLoginForm";
 
 /**
  * Eltern-Komponente welche die Kinder-Komponenten kontrolliert. "State" wird in
@@ -61,7 +62,7 @@ function MitteLängsdruckKraft() {
             <Berechnungsprotokoll />
           </div>
         </Box>
-        <FormWithoutHookForm />
+        <MuiLoginForm />
       </Container>
     </>
   );

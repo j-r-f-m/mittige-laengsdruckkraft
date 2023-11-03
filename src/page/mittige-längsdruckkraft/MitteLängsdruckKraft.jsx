@@ -5,7 +5,7 @@ import Berechnung from "./Berechnung";
 import Berechnungsprotokoll from "./Berechnungsprotokoll";
 import Berechnungsansatz from "./Berechnungsansatz";
 
-import { MuiLoginForm } from "../components/form-components/MuiLoginForm";
+import { MuiLoginForm } from "../../components/form-components/MuiLoginForm";
 
 /**
  * Eltern-Komponente welche die Kinder-Komponenten kontrolliert. "State" wird in
@@ -14,22 +14,23 @@ import { MuiLoginForm } from "../components/form-components/MuiLoginForm";
  */
 function MitteLängsdruckKraft() {
   const [data, setData] = useState({
-    F: 0,
-    h_1: 0,
-    h_s: 0,
-    As: 0,
-    sigma_s: 43.5, // cm²/kN
+    f: 0,
+    h1: 0,
+    hs: 0,
+    fs: 0,
+    asErf: 0,
+
     calculated: false, // Benötigt für bedingte Darstellung.
   });
 
-  const setDataChild = (iptF, iptH_1, iptH_s, iptAs, iptSigma_s) => {
+  const setDataChild = (iptF, iptH_1, iptH_s, iptFs, iptAs) => {
     setData({
       ...data,
-      F: iptF,
-      h_1: iptH_1,
-      h_2: iptH_s,
-      As: iptAs,
-      iptSigma: iptSigma_s,
+      f: iptF,
+      h1: iptH_1,
+      hs: iptH_s,
+      fs: iptFs,
+      asErf: iptAs,
     });
   };
 
@@ -58,11 +59,10 @@ function MitteLängsdruckKraft() {
             {" "}
             <Berechnungsansatz />
             <Formeln />
-            <Berechnung />
-            <Berechnungsprotokoll />
+            <Berechnung setDataChild={setDataChild} />
+            <Berechnungsprotokoll data={data} />
           </div>
         </Box>
-        <MuiLoginForm />
       </Container>
     </>
   );

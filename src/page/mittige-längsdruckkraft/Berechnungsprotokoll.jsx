@@ -5,8 +5,9 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { MathJax } from "better-react-mathjax";
 
-function Berechnungsprotokoll() {
+function Berechnungsprotokoll(props) {
   return (
     <Accordion>
       <AccordionSummary
@@ -17,10 +18,14 @@ function Berechnungsprotokoll() {
         <Typography>Berechnungsprotokoll</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </Typography>
+        <MathJax>
+          {" "}
+          <Typography>
+            <div>
+              {`\\(F{s} = \\frac{${props.data.f}}{4} \\cdot (1- \\frac{${props.data.h1}}{${props.data.hs}}) = ${props.data.fs} \\)`}
+            </div>
+          </Typography>
+        </MathJax>
       </AccordionDetails>
     </Accordion>
   );

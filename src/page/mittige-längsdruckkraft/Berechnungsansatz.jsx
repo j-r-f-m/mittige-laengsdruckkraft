@@ -12,7 +12,7 @@ import styled from "styled-components";
 function Berechnungsansatz() {
   // using styled components for image control
   const ImageComp = styled.img`
-    max-width: 100%;
+    max-width: 40%;
     height: auto;
     padding: 2rem;
   `;

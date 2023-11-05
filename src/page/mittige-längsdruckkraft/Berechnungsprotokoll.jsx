@@ -28,32 +28,47 @@ function Berechnungsprotokoll(props) {
             <MathJax dynamic>{`\\(F = ${props.data.f} \\: kN\\)`}</MathJax>
           </Grid>
           <Grid xs={6} md={4}>
-            {" "}
-            <MathJax dynamic>{`\\(Fs = ${props.data.fs} \\: kN\\)`}</MathJax>
-          </Grid>
-          <Grid xs={6} md={4}>
             <MathJax dynamic>{`\\(h{1} = ${props.data.h1} \\: m\\)`}</MathJax>
           </Grid>
           <Grid xs={6} md={4}>
-            {" "}
-            {"\\(h{s} \\)"}&nbsp;{"\\(= \\)"}&nbsp;
-            {`\\(${props.data.hs}\\)`}&nbsp;{"\\(m\\)"}
-            &emsp;
+            <MathJax dynamic>{`\\(h{s} = ${props.data.hs}  \\: m\\)`}</MathJax>
           </Grid>
           <Grid xs={6} md={4}>
             {" "}
-            {"\\(fyd \\)"}&nbsp;{"\\(= \\)"}&nbsp;
-            {`\\(${props.data.fyd}\\)`}&nbsp;{"\\(kN/cm²\\)"}
-            &emsp;
+            <MathJax
+              dynamic
+            >{`\\(f{yd} = ${props.data.fyd} \\:kN/cm²\\)`}</MathJax>
           </Grid>
           <Grid xs={12}>
-            {" "}
-            {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}})\\)"}
-            &nbsp;
-            {"\\( kN\\)"}
+            <MathJax dynamic>{`\\(F{s} = ${props.data.fs} \\: kN\\)`}</MathJax>
           </Grid>
           <Grid xs={12}>
-            {`\\(F{s} = \\frac{${props.data.f}}{4} \\cdot (1- \\frac{${props.data.h1}}{${props.data.hs}}) = ${props.data.fs} \\)`}
+            <MathJax>
+              {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}})\\)"}{" "}
+            </MathJax>
+          </Grid>
+          <Grid xs={12}>
+            <MathJax dynamic>
+              {`\\(F{s} = \\frac{${props.data.f}}{4} \\cdot (1- \\frac{${props.data.h1}}{${props.data.hs}}) = ${props.data.fs} \\: kN\\)`}
+            </MathJax>
+          </Grid>
+          <Grid xs={12}>
+            <MathJax dynamic>{`\\(F{s} = ${props.data.fs} \\: kN\\)`}</MathJax>
+          </Grid>
+          <Grid xs={12}>
+            <MathJax dynamic>
+              {"\\(A{s} = \\frac{F{s}}{\\sigma{s}}  \\)"}
+            </MathJax>
+          </Grid>
+          <Grid xs={12}>
+            <MathJax dynamic>
+              {`\\(A{s} = \\frac{${props.data.fs}}{${props.data.fyd}} = ${props.data.asErf}\\:cm² \\)`}
+            </MathJax>
+          </Grid>
+          <Grid xs={12}>
+            <MathJax dynamic>
+              {`\\(A{s} = ${props.data.asErf} \\:cm² \\)`}
+            </MathJax>
           </Grid>
         </Grid>
       </AccordionDetails>

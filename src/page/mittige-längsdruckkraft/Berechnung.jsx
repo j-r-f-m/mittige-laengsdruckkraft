@@ -13,6 +13,7 @@ import {
   asErf,
   fs,
 } from "../../calculations/mittigeLängsdruckKraft/mittigeLängsdruckKraft";
+import { round } from "mathjs";
 
 function Berechnung(props) {
   const form = useForm({
@@ -20,6 +21,7 @@ function Berechnung(props) {
       f: "",
       h1: "",
       hs: "",
+      fyd: "43.5",
     },
   });
 
@@ -33,16 +35,17 @@ function Berechnung(props) {
     const iptF = Number(data.f);
     const iptH1 = Number(data.h1);
     const iptHs = Number(data.hs);
+    const iptFyd = Number(data.fyd);
     console.log(iptF, iptH1, iptHs);
 
-    const currFs = fs(iptF, iptH1, iptHs);
-    const currAs = asErf(currFs);
+    const currFs = round(fs(iptF, iptH1, iptHs), 2);
+    const currAs = round(asErf(currFs, iptFyd), 2);
     console.log(currFs, currAs);
 
-    props.setDataChild(iptF, iptH1, iptHs, currFs, currAs);
+    props.setDataChild(iptF, iptH1, iptHs, currFs, currAs, iptFyd);
   };
   return (
-    <Accordion>
+    <Accordion defaultExpanded={true}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"
@@ -53,7 +56,9 @@ function Berechnung(props) {
       <MathJax>
         <AccordionDetails>
           <div style={{ paddingBottom: "1.5rem" }}>
-            {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}}) \\)"}
+            {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}})\\)"}
+            &nbsp;
+            {"\\( kN\\)"}
           </div>
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             {" "}
@@ -92,6 +97,20 @@ function Berechnung(props) {
               helperText={errors.hs?.message}
               InputProps={{
                 endAdornment: <InputAdornment position="end">m</InputAdornment>,
+              }}
+            />
+            <TextField
+              sx={{ width: "100%", paddingBottom: ".5rem" }}
+              label="fyd"
+              type="text"
+              defaultValue="43.5"
+              {...register("fyd", { required: "Wert wird benötigt" })}
+              error={!!errors.fyd}
+              helperText={errors.fyd?.message}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">kN/cm²</InputAdornment>
+                ),
               }}
             />
             <Button type="submit" variant="contained" color="primary">

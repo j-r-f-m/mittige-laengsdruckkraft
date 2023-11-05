@@ -28,7 +28,7 @@ function Formeln() {
           </Typography>
 
           <div>
-            {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}}) \\)"}
+            {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}})\\)"}
           </div>
           <div>
             <span style={{ display: "inline-block", width: "3rem" }}>

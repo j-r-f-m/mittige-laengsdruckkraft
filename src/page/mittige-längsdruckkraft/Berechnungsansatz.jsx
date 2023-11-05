@@ -9,14 +9,14 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import styled from "styled-components";
 
-function Berechnungsansatz() {
-  // using styled components for image control
-  const ImageComp = styled.img`
-    max-width: 40%;
-    height: auto;
-    padding: 2rem;
-  `;
+// using styled components for image control
+const ImageComp = styled.img`
+  max-width: 40%;
+  height: auto;
+  padding: 2rem;
+`;
 
+function Berechnungsansatz() {
   return (
     <Accordion>
       <AccordionSummary

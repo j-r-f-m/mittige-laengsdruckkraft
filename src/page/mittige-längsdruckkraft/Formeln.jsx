@@ -15,15 +15,11 @@ function Formeln() {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography>Formeln</Typography>
+        <Typography variant="h5">Formeln</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <MathJax>
-          <Typography
-            variant="h5"
-            component="h5"
-            sx={{ paddingBottom: "0.25rem" }}
-          >
+          <Typography variant="h6" sx={{ paddingBottom: "0.25rem" }}>
             Resultierende Spaltzugkraft
           </Typography>
 

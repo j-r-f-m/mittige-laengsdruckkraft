@@ -24,7 +24,7 @@ function Berechnungsansatz() {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography>Berechnungsansatz</Typography>
+        <Typography variant="h5">Berechnungsansatz</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Box

@@ -32,9 +32,9 @@ function Berechnung(props) {
     console.log(data);
 
     // get input data from data object
-    const iptF = Number(data.f);
-    const iptH1 = Number(data.h1);
-    const iptHs = Number(data.hs);
+    {
+      ("\\(A{s} = \\frac{F{s}}{\\sigma{s}}  \\)");
+    }
     const iptFyd = Number(data.fyd);
     console.log(iptF, iptH1, iptHs);
 
@@ -51,7 +51,7 @@ function Berechnung(props) {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography>Berechnung</Typography>
+        <Typography variant="h5">Berechnung</Typography>
       </AccordionSummary>
       <MathJax>
         <AccordionDetails>

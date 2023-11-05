@@ -28,46 +28,46 @@ function Berechnungsprotokoll(props) {
             <MathJax dynamic>{`\\(F = ${props.data.f} \\: kN\\)`}</MathJax>
           </Grid>
           <Grid xs={6} md={4}>
-            <MathJax dynamic>{`\\(h{1} = ${props.data.h1} \\: m\\)`}</MathJax>
+            <MathJax dynamic>{`\\(h_{1} = ${props.data.h1} \\: m\\)`}</MathJax>
           </Grid>
           <Grid xs={6} md={4}>
-            <MathJax dynamic>{`\\(h{s} = ${props.data.hs}  \\: m\\)`}</MathJax>
+            <MathJax dynamic>{`\\(h_{s} = ${props.data.hs}  \\: m\\)`}</MathJax>
           </Grid>
           <Grid xs={6} md={4}>
             {" "}
             <MathJax
               dynamic
-            >{`\\(f{yd} = ${props.data.fyd} \\:kN/cm²\\)`}</MathJax>
+            >{`\\(f_{yd} = ${props.data.fyd} \\:kN/cm²\\)`}</MathJax>
           </Grid>
           <Grid xs={12}>
-            <MathJax dynamic>{`\\(F{s} = ${props.data.fs} \\: kN\\)`}</MathJax>
+            <MathJax dynamic>{`\\(F_{s} = ${props.data.fs} \\: kN\\)`}</MathJax>
           </Grid>
           <Grid xs={12}>
             <MathJax>
-              {"\\(F{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}})\\)"}{" "}
+              {"\\(F_{s} = \\frac{F}{4} \\cdot (1- \\frac{h{1}}{h{s}})\\)"}{" "}
             </MathJax>
           </Grid>
           <Grid xs={12}>
             <MathJax dynamic>
-              {`\\(F{s} = \\frac{${props.data.f}}{4} \\cdot (1- \\frac{${props.data.h1}}{${props.data.hs}}) = ${props.data.fs} \\: kN\\)`}
+              {`\\(F_{s} = \\frac{${props.data.f}}{4} \\cdot (1- \\frac{${props.data.h1}}{${props.data.hs}}) = ${props.data.fs} \\: kN\\)`}
             </MathJax>
           </Grid>
           <Grid xs={12}>
-            <MathJax dynamic>{`\\(F{s} = ${props.data.fs} \\: kN\\)`}</MathJax>
+            <MathJax dynamic>{`\\(F_{s} = ${props.data.fs} \\: kN\\)`}</MathJax>
           </Grid>
           <Grid xs={12}>
             <MathJax dynamic>
-              {"\\(A{s} = \\frac{F{s}}{\\sigma{s}}  \\)"}
-            </MathJax>
-          </Grid>
-          <Grid xs={12}>
-            <MathJax dynamic>
-              {`\\(A{s} = \\frac{${props.data.fs}}{${props.data.fyd}} = ${props.data.asErf}\\:cm² \\)`}
+              {"\\(A_{s} = \\frac{F_{s}}{\\sigma_{s}}  \\)"}
             </MathJax>
           </Grid>
           <Grid xs={12}>
             <MathJax dynamic>
-              {`\\(A{s} = ${props.data.asErf} \\:cm² \\)`}
+              {`\\(A_{s} = \\frac{${props.data.fs}}{${props.data.fyd}} = ${props.data.asErf}\\:cm² \\)`}
+            </MathJax>
+          </Grid>
+          <Grid xs={12}>
+            <MathJax dynamic>
+              {`\\(A_{s} = ${props.data.asErf} \\:cm² \\)`}
             </MathJax>
           </Grid>
         </Grid>

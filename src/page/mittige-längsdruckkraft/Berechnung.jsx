@@ -32,9 +32,9 @@ function Berechnung(props) {
     console.log(data);
 
     // get input data from data object
-    {
-      ("\\(A{s} = \\frac{F{s}}{\\sigma{s}}  \\)");
-    }
+    const iptF = Number(data.f);
+    const iptH1 = Number(data.h1);
+    const iptHs = Number(data.hs);
     const iptFyd = Number(data.fyd);
     console.log(iptF, iptH1, iptHs);
 

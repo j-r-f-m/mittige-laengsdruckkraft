@@ -28,7 +28,7 @@ function Formeln() {
           </div>
           <div>
             <span style={{ display: "inline-block", width: "3rem" }}>
-              {"\\(F{s}\\)"}
+              {"\\(F_{s}\\)"}
             </span>
             <span>resultierende Spaltzugkraft</span>
           </div>
@@ -43,13 +43,13 @@ function Formeln() {
           </div>
           <div>
             <span style={{ display: "inline-block", width: "3rem" }}>
-              {"\\(h{1}\\)"}
+              {"\\(h_{1}\\)"}
             </span>
             <span>Seitenlänge der Teilfläche</span>
           </div>
           <div>
             <span style={{ display: "inline-block", width: "3rem" }}>
-              {"\\(h{1}\\)"}
+              {"\\(h_{1}\\)"}
             </span>
             <span>Seitenlänge der Verteilungsfläche</span>
           </div>
@@ -61,7 +61,7 @@ function Formeln() {
           >
             Erforderliche Bewehrung
           </Typography>
-          <div>{"\\(A{s} = \\frac{F{s}}{\\sigma{s}}  \\)"}</div>
+          <div>{"\\(A{s} = \\frac{F_{s}}{\\sigma_{s}}  \\)"}</div>
         </MathJax>
       </AccordionDetails>
     </Accordion>

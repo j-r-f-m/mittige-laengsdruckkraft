@@ -94,7 +94,7 @@ function Berechnungsprotokoll(props) {
   );
 
   return (
-    <Accordion>
+    <Accordion defaultExpanded={true}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"

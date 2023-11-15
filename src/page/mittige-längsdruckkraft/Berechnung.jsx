@@ -14,7 +14,14 @@ import {
   fs,
 } from "../../calculations/mittigeLängsdruckKraft/mittigeLängsdruckKraft";
 import { round } from "mathjs";
+import PropTypes from "prop-types";
 
+/**
+ * Renders a form for calculating the values of currFs and currAs based on the input data.
+ * @param {Object} props - The props object.
+ * @param {Function} props.setDataChild - The function to set the data in the parent component.
+ * @returns {JSX.Element} - The JSX element.
+ */
 function Berechnung(props) {
   const form = useForm({
     defaultValues: {
@@ -25,25 +32,40 @@ function Berechnung(props) {
     },
   });
 
+  /**
+   * Registers form inputs, handles form submission, and provides form state.
+   * @typedef {Object} useFormReturn
+   * @property {Function} register - Registers form inputs.
+   * @property {Function} handleSubmit - Handles form submission.
+   * @property {Object} formState - Provides form state.
+   */
   const { register, handleSubmit, formState } = form;
   const { errors } = formState;
 
+  /**
+   * Handles the form submission and calculates the values of currFs and currAs.
+   * @param {Object} data - The input data object.
+   * @param {number} data.f - The value of f.
+   * @param {number} data.h1 - The value of h1.
+   * @param {number} data.hs - The value of hs.
+   * @param {number} data.fyd - The value of fyd.
+   * @returns {void}
+   */
   const onSubmit = (data) => {
-    console.log(data);
-
     // get input data from data object
     const iptF = Number(data.f);
     const iptH1 = Number(data.h1);
     const iptHs = Number(data.hs);
     const iptFyd = Number(data.fyd);
-    console.log(iptF, iptH1, iptHs);
 
+    // Berechne die Spaltzugkraft Fs und die erforderliche Bewehrung As
     const currFs = round(fs(iptF, iptH1, iptHs), 2);
     const currAs = round(asErf(currFs, iptFyd), 2);
-    console.log(currFs, currAs);
 
+    // Aktualisiere den Zustand der Eltern-Komponente
     props.setDataChild(iptF, iptH1, iptHs, currFs, currAs, iptFyd);
   };
+
   return (
     <Accordion defaultExpanded={true}>
       <AccordionSummary
@@ -122,4 +144,9 @@ function Berechnung(props) {
     </Accordion>
   );
 }
+
+Berechnung.propTypes = {
+  setDataChild: PropTypes.func.isRequired,
+};
+
 export default Berechnung;

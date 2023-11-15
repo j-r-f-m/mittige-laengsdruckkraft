@@ -7,9 +7,22 @@ import {
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { MathJax } from "better-react-mathjax";
-import { useEffect } from "react";
+import PropTypes from "prop-types";
 
-function Berechnungsprotokoll(props) {
+/**
+ * Renders the calculation protocol component.
+ * @param {Object} props - The props object.
+ * @param {Object} props.data - The data object containing the calculation results.
+ * @param {number} props.data.f - The force value in kN.
+ * @param {number} props.data.h1 - The height value in m.
+ * @param {number} props.data.hs - The height value in m.
+ * @param {number} props.data.fyd - The yield strength value in kN/cm².
+ * @param {number} props.data.fs - The spalling force value in kN.
+ * @param {number} props.data.asErf - The effective reinforcement area in cm².
+ * @param {boolean} props.data.calculated - A boolean indicating whether the calculation has been performed.
+ * @returns {JSX.Element} - The JSX element representing the calculation protocol component.
+ */
+export function Berechnungsprotokoll(props) {
   const outputTrue = (
     <>
       {" "}
@@ -95,4 +108,15 @@ function Berechnungsprotokoll(props) {
     </Accordion>
   );
 }
-export default Berechnungsprotokoll;
+
+Berechnungsprotokoll.propTypes = {
+  data: PropTypes.shape({
+    f: PropTypes.number,
+    h1: PropTypes.number,
+    hs: PropTypes.number,
+    fyd: PropTypes.number,
+    fs: PropTypes.number,
+    asErf: PropTypes.number,
+    calculated: PropTypes.bool,
+  }).isRequired,
+};

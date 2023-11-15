@@ -16,6 +16,11 @@ const ImageComp = styled.img`
   padding: 2rem;
 `;
 
+/**
+ * Renders the Berechnungsansatz component.
+ * @returns {JSX.Element} The Berechnungsansatz component.
+ */
+
 function Berechnungsansatz() {
   return (
     <Accordion>

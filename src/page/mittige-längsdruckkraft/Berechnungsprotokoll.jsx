@@ -22,7 +22,7 @@ import PropTypes from "prop-types";
  * @param {boolean} props.data.calculated - A boolean indicating whether the calculation has been performed.
  * @returns {JSX.Element} - The JSX element representing the calculation protocol component.
  */
-export function Berechnungsprotokoll(props) {
+function Berechnungsprotokoll(props) {
   const outputTrue = (
     <>
       {" "}
@@ -120,3 +120,5 @@ Berechnungsprotokoll.propTypes = {
     calculated: PropTypes.bool,
   }).isRequired,
 };
+
+export default Berechnungsprotokoll;

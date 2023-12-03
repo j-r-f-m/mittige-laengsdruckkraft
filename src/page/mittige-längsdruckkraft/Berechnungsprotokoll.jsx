@@ -94,7 +94,7 @@ function Berechnungsprotokoll(props) {
   );
 
   return (
-    <Accordion defaultExpanded={true}>
+    <Accordion sx={{ mb: 2 }} defaultExpanded={true}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"
@@ -102,7 +102,7 @@ function Berechnungsprotokoll(props) {
       >
         <Typography variant="h5">Berechnungsprotokoll</Typography>
       </AccordionSummary>
-      <AccordionDetails>
+      <AccordionDetails sx={{ mb: 0 }}>
         {props.data.calculated ? outputTrue : outputFalse}
       </AccordionDetails>
     </Accordion>

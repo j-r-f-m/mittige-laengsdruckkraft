@@ -64,13 +64,12 @@ function MitteLängsdruckKraft() {
           >
             Mittige Längsdruckkraft
           </Typography>{" "}
-          <div>
-            {" "}
+          <Box sx={{ mb: 2 }}>
             <Berechnungsansatz />
             <Formeln />
             <Berechnung setDataChild={setDataChild} />
-            <Berechnungsprotokoll data={data} />
-          </div>
+            <Berechnungsprotokoll data={data} sx={{ pb: 2 }} />
+          </Box>{" "}
         </Box>
       </Container>
     </>
